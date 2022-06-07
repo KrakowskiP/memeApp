@@ -1,25 +1,24 @@
-import styled from "@emotion/styled";
-import { Box } from "@mui/material";
+import { Box, Checkbox } from "@mui/material";
 import LikeButton from "./LikeButton";
 import DislikeButton from "./DislikeButton";
+import { FavoriteBorder, Favorite } from "@mui/icons-material";
 
-const MemContainer = styled(Box)`
-  border: 1px solid black;
-  width: 400px;
-  margin: 20px auto;
-  text-align: left;
-  padding: 10px;
-`;
-
-export default function SingleMem({ data }) {
+export default function SingleMem({ data, handleCheckbox, onClick, index }) {
   return (
-    <MemContainer>
-      <h3>{data.title}</h3>
+    <Box className="MemContainer" key={index}>
+      <div className="MemeTitle">
+        <b>{data.title}</b>
+        <Checkbox
+          icon={<FavoriteBorder />}
+          checkedIcon={<Favorite />}
+          onChange={() => handleCheckbox(data.id - 1)}
+        />
+      </div>
       <img src={data.img} alt={data.title} width="400px" />
       <div>
-        <LikeButton data={data} />
-        <DislikeButton data={data} />
+        <LikeButton data={data} onClick={onClick} index={data.id - 1} />
+        <DislikeButton data={data} onClick={onClick} index={data.id - 1} />
       </div>
-    </MemContainer>
+    </Box>
   );
 }

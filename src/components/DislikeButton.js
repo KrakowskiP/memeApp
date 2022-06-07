@@ -6,14 +6,15 @@ const StyledButton = styled(Button)`
   width: 200px;
 `;
 
-export default function DislikeButton(data) {
+export default function DislikeButton({ onClick, data, index }) {
   return (
     <StyledButton
       variant="contained"
       color="error"
       endIcon={<ArrowDownwardIcon />}
+      onClick={() => onClick("minus", index)}
     >
-      {data.data.downvotes}
+      {data.downvotes}
     </StyledButton>
   );
 }

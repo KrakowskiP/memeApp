@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding-top: 70px;
 }
 
 .App-logo {
@@ -26,6 +27,41 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.MemContainer {
+  border: 1px solid black;
+  width: 400px;
+  margin: 20px auto;
+  text-align: left;
+  padding: 10px;
+}
+
+.alert {
+  color: red;
+}
+
+.activeNavlink {
+  color: black;
+  text-transform: uppercase;
+}
+.notActiveNavLink {
+  color: black;
+  text-transform: none;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: aliceblue;
+  padding: 20px;
+  font-size: large;
+  z-index: 10;
+}
+
+.MemeTitle {
+font-size:larger;
 }
 
 @keyframes App-logo-spin {

@@ -6,14 +6,15 @@ const StyledButton = styled(Button)`
   width: 200px;
 `;
 
-export default function LikeButton(data) {
+export default function LikeButton({ onClick, data, index }) {
   return (
     <StyledButton
       variant="contained"
       color="success"
       endIcon={<ArrowUpwardIcon />}
+      onClick={() => onClick("plus", index)}
     >
-      {data.data.upvotes}
+      {data.upvotes}
     </StyledButton>
   );
 }
